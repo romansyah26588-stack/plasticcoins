@@ -7,6 +7,40 @@
     <!-- Loading Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+/*----------------------------------------------------------------------*/
+        /* Menggunakan font Inter secara default */
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 200vh; /* Memberi tinggi agar bisa di-scroll */
+            background-color: #f7f7f7;
+        }
+
+        /* Gaya tambahan untuk tombol ikon */
+        .icon-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem; /* 56px */
+            height: 3.5rem; /* 56px */
+            border-radius: 9999px; /* Bulat sempurna */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gaya untuk konten utama */
+        .content-section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+/*----------------------------------------------------------------------*/
         /* Configuration to use the Inter font */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
@@ -22,6 +56,43 @@
         }
     </style>
 </head>
+/*----------------------------------------------------------------------*/ 
+    <!-- Kontainer Ikon Terapung (Fixed Position) -->
+    <!-- 'fixed' menjaga elemen tetap di layar. 'bottom-6' & 'right-6' menempatkannya 1.5rem dari bawah dan kanan. -->
+    <div id="floating-icons" class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+        
+        <!-- Ikon Pump.fun (Menggunakan SVG Kustom Akurat) -->
+        <a 
+            href="https://pump.fun" 
+            target="_blank" 
+            aria-label="Kunjungi Pump.fun" 
+            class="icon-button bg-white hover:shadow-xl hover:bg-gray-50"
+        >
+            <!-- SVG Kustom Logo Pil Pump.fun (Rotasi -25 derajat, dengan outline) -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6">
+                <g transform="rotate(-25 12 12)">
+                    <!-- Green Half (Kiri - Menggunakan stroke untuk outline) -->
+                    <path d="M12 8H7C5.34315 8 4 9.34315 4 11V13C4 14.6569 5.34315 16 7 16H12V8Z" 
+                          fill="#58d68d" stroke="#1f2937" stroke-width="1.5"/>
+                    <!-- White Half (Kanan - Menggunakan stroke untuk outline) -->
+                    <path d="M12 8H17C18.6569 8 20 9.34315 20 11V13C20 14.6569 18.6569 16 17 16H12V8Z" 
+                          fill="white" stroke="#1f2937" stroke-width="1.5"/>
+                </g>
+            </svg>
+        </a>
+
+        <!-- Ikon X.com (Twitter Baru) -->
+        <a 
+            href="https://x.com" 
+            target="_blank" 
+            aria-label="Kunjungi X.com" 
+            class="icon-button bg-gray-900 text-white hover:bg-black"
+        >
+            <!-- Ikon X (Twitter) -->
+            <i class="fa-brands fa-x-twitter text-xl" title="X.com"></i>
+        </a>
+    </div>
+/*----------------------------------------------------------------------*/    
 <body>
 
     <!-- Header & Navigation -->
